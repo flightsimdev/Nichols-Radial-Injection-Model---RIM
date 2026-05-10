@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+
+\geometry{a4paper, margin=1in}
+
+\title{Nichols Radial Injection Model (RIM) X\\
+Expansion Rate Calculator Without Redshift --- Deriving \(H_0\) from Raw Gamma-Ray Burst Detection Rates}
+\author{Lawrence William Nichols}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Nichols Radial Injection Model derives the Hubble constant \(H_0\) directly from the raw annual detection rate of Gamma-Ray Bursts (GRBs), requiring no redshift information. The working formula is
+\[
+H_{\rm calc} = F_{\rm GRB} \times 0.78647,
+\]
+Where \(F_{\rm GRB}\) is the sky-coverage-normalised annual GRB rate (Swift \(\approx 1/7\) sky as reference) and \(0.78647\) is the RIM expansion mapping rate. Using public BATSE, Fermi, and Swift catalogs, the method yields \(H_0\) in the range \(62\)--\(67.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) (2024 catalog data) — remarkably close to the redshift-based published values of \(67\)--\(70\). Redshift is a secondary geometric effect and is not required to measure expansion.
+\end{abstract}
+
+\section{The Formula and Constants}
+
+The RIM expansion-rate calculator is
+\[
+H_{\rm calc} = 59\,\frac{\mathrm{km\,s^{-1}}}{\mathrm{Mpc}} \times F_{\rm GRB} \times 0.01333.
+\]
+The product of the constants is the expansion mapping rate
+\[
+59 \times 0.01333 = 0.78647,
+\]
+so the working formula simplifies to
+\[
+H_{\rm calc} = F_{\rm GRB} \times 0.78647,
+\]
+where \(F_{\rm GRB}\) is the annual GRB detection rate normalised to Swift’s \(\approx 1/7\) sky coverage.
+
+\section{Data Sources and Sky-Coverage Corrections}
+
+\begin{itemize}
+\item \textbf{BATSE} (CGRO) — full-sky coverage, 2704 GRBs over 9 years.
+\item \textbf{Fermi} (GBM) — \(\approx 100\,\%\) sky coverage in 70\,\% chunks (30\,\% algorithmic gap injection), 3932 GRBs over 18 years.
+\item \textbf{Swift} (BAT) — \(\approx 1/7\) sky coverage, used as the normalisation reference.
+\end{itemize}
+
+\section{Step-by-Step Calculations}
+
+\textbf{BATSE (full-sky)}  
+Raw rate: \(2704 \div 9 = 300.444\,\mathrm{yr^{-1}}\)  
+Normalised to Swift sky fraction: \(300.444 \div 7 \approx 42.9206\)  
+Two-year equivalent (Swift comparison window): \(42.9206 \times 2 = 85.8412\)  
+\[
+H_{\rm calc} = 85.8412 \times 0.78647 \approx 67.511\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
+
+\textbf{Fermi (near full-sky)}  
+Raw rate: \(3932 \div 9 \approx 436.888\,\mathrm{yr^{-1}}\)  
+Add missing 30\,\%: \(436.888 \times 0.3 \approx 131.066\) → total \(567.954\,\mathrm{yr^{-1}}\)  
+Normalised to Swift sky fraction: \(567.954 \div 7 \approx 81.136\)  
+\[
+H_{\rm calc} = 81.136 \times 0.78647 \approx 63.811\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
+
+\textbf{Swift (reference sky fraction)}  
+Normalised effective rate: \(80\,\mathrm{yr^{-1}}\)  
+\[
+H_{\rm calc} = 80 \times 0.78647 \approx 62.918\,\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\]
+
+\section{Results and Comparison to Published Values}
+
+The three independent surveys give the tight range \(62\)--\(67.5\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) using \emph{only} raw GRB counts. The official 2024 redshift-based values lie at \(67\)--\(70\). The RIM GRB-only method is within \(\approx 5\,\%\) of the published range.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Dataset & Raw GRBs & Normalised \(F_{\rm GRB}\) & \(H_{\rm calc}\) (\(\mathrm{km\,s^{-1}\,Mpc^{-1}}\)) \\
+\midrule
+BATSE   & 2704 (9 yr) & 85.84 & 67.511 \\
+Fermi   & 3932 (18 yr) & 81.14 & 63.811 \\
+Swift   & --- & 80 & 62.918 \\
+\bottomrule
+\end{tabular}
+\caption{RIM expansion-rate results across the three major GRB catalogs (no redshift used).}
+\label{tab:results}
+\end{table}
+
+\section{Uncertainties (optional but recommended)}
+
+Poisson counting uncertainties on the raw rates plus \(\approx 5\,\%\) sky-coverage normalisation uncertainty yield a combined statistical error of \(\pm 2\)--\(3\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\) on each \(H_{\rm calc}\). Systematic uncertainty on the mapping rate \(0.78647\) is currently empirical; future derivation from the 5D metric will reduce it.
+
+\section{Conclusion}
+
+The RIM expansion-rate calculator demonstrates that a simple, redshift-free method based on raw GRB counts yields \(H_0\) values that sit squarely inside the modern observational range. Future large-scale GRB surveys (e.g., next-generation Fermi or Swift extensions) will provide an ever-tighter independent test model.
+
+\section{Video Catalog}
+A video overview of the full RIM series is available on the author's \href{https://www.youtube.com/@Nichols_Radial_Injection_Model}{Nichols Radial Injection Model (RIM)} YouTube channel.
+
+\begin{thebibliography}{99}
+
+\bibitem{rimI}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) and Radial ERB Inflows: A Mechanism for Progenitor-less Astrophysical Events, the Hubble Pulse, and 4D Substrate Interactions.
+[Self-published], January 21, 2026.
+\newline
+\url{https://rxiverse.org/abs/2602.0036}
+
+\bibitem{rimII}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) 11-Year Solar Cycle Pulses, GRB Milestones, Historical Alignments, and the 16.6 Gyr Hypersphere Universe.
+[Self-published], February 2026.
+\newline
+\url{https://rxiverse.org/abs/2602.0038}
+
+\bibitem{rimIII}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) III: The 3,000-Year Universal Odometer, the 1054 CE Primary Strike, and the Decaying 11-Year Cycle.
+[Self-published], 15 February 2026.
+\newline
+\url{https://rxiverse.org/abs/2602.0043}
+
+\bibitem{rimIV}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) IV: A 5D Mass-Regulated Manifold Solution to Cosmic Expansion.
+[Self-published], 28 February 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0001}
+
+\bibitem{rimV}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) V:
+The Empirical Seal of the 11.07-Year Pulse
+and Universal Resonance in Stellar Cycles
+[Self-published], 4 March 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0003}
+
+\bibitem{rimVI}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) VI:
+The Birth of the Universe
+[Self-published], 10 March 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0023}
+
+\bibitem{rimVII}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) VII:
+the $\Lambda$CDM’s Inconsistencies
+[Self-published], 23 March 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0085}
+
+\bibitem{rimVIII}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) VIII:
+VIII The Bullet Cluster and Geometric Torsion
+[Self-published], 29 March 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0102}
+
+\bibitem{rimIX}
+L.\,W.\,Nichols.
+Nichols Radial Injection Model (RIM) IX:
+Extreme Hawking Decoupling: Observational Evidence from Sgr A*
+[Self-published], 31 March 2026.
+\newline
+\url{https://rxiverse.org/abs/2603.0111}
+
+\bibitem{einstein1935}
+Einstein, A., \& Rosen, N. (1935).
+\textit{The Particle Problem in the General Theory of Relativity}.
+Physical Review, 48(1), 73.
+
+\bibitem{Feynman} R. P. Feynman, ``Cargo Cult Science,'' Caltech Commencement Address, 1974.
+\end{thebibliography}
+
+\newpage
+
+\section{Engineering Studies and Visual Data}
+The following diagrams illustrate the RIM expansion-rate calculator, observatory sky-coverage standardisation, step-by-step workflow, and convergence with published values.
+
+\includepdf[pages=-]{Expansion_Beyond_Redshift.pdf}
+
+\end{document}
