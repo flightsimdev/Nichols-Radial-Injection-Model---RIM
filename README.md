@@ -1,17 +1,17 @@
 # Nichols-Radial-Injection-Model---RIM
-The Nichols Radial Injection model (RIM) is an alternative to the ΛCDM model of the birth of the universe and observations found within it, utilizing first principles approach.
+Nichols Radial Injection Model (RIM)
+An independent cosmological framework proposing an alternative to the ΛCDM model, developed by Lawrence William Nichols (2025-2026).
+Overview
+The Nichols Radial Injection Model (RIM) proposes that the observable universe is a 3D object travelling through a 5D toroidal-helix manifold. Mass injection via Gamma-Ray Bursts replaces dark energy as the expansion mechanism. The framework offers alternative explanations for several observational anomalies in standard cosmology.
 
-This repository contains my independent, alternative cosmological framework.
+Key Empirical Claims
+A universal 11.07-year pulse identified across stellar magnetic cycles, volcanic records, seismic data, and ice core chemistry
+H₀ derived independently from GRB detection rates without redshift, converging to 62-67.5 km/s/Mpc across three independent observatories
+Systematic absence of r-process elements (Z>28) across black hole accretion spectra, meteorites, lunar samples, and Mars rover data
+Planetary iron core mass fraction following an inverse power law with orbital distance
 
-Paper 1 introduces the core concepts of RIM, including:
-• a “Static‑Bulk / Dynamic‑Surface” 3‑sphere universe embedded in a 4D manifold
-• ERB‑driven mass‑injection events as a proposed mechanism for progenitor‑less GRBs
-• a GRB‑correlated “Hubble Pulse” using the relation Hcalc = 59 × FGRB × 0.01333  
-• a 1.47‑trillion‑light‑year 4D curvature radius derived from a near‑flat S³ geometry
-• a 16.6 Gyr alternative cosmic timeline for interpreting early galaxy maturity
-
-These materials represent my own theoretical work and are not part of mainstream cosmology.
-
-PDFs are included exactly as published on rxiverse.org.
-Link
+Status
+Self-published independent astrophysics research. Not peer reviewed. Not mainstream cosmology. Presented as thought experiments and observational correlations for consideration and testing by others.
+Papers
+Published on rxiverse.org — links in individual paper folders.
 https://rxiverse.org/author/lawrence_william_nichols
